@@ -366,7 +366,7 @@ Scale Error:     8.56%
 | **Sim(3) scale correction** | 6.5944 |
 | **Sim(3) translation** | [-45.426, -95.559, 36.060] m |
 | **Association threshold** | \(t_{max\_diff}\) = 0.1 s |
-| **Association rate (Completeness)** | 87.01% |
+| **Association rate (Completeness)** | 100% |
 
 ### Performance Analysis
 
