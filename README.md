@@ -383,7 +383,7 @@ Scale Error:     8.56%
 
 ### Trajectory Comparison
 
-![Trajectory Evaluation](<img width="849" height="709" alt="image" src="https://github.com/user-attachments/assets/bc739ae4-405a-409d-a5e5-7e268dfd7a11" />
+![Trajectory Evaluation](figures/Trajectory Evaluation.png>
 )
 
 This figure is generated from the same inputs used for evaluation (`ground_truth.txt` and `CameraTrajectory.txt`) and includes:
