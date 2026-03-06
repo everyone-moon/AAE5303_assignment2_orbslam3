@@ -435,10 +435,10 @@ This assignment demonstrates monocular Visual Odometry implementation using ORB-
 
 | Priority | Action | Expected Improvement |
 |----------|--------|---------------------|
-| High | Increase `nFeatures` to 2000-2500 | 30-40% ATE reduction |
-| High | Lower FAST thresholds (15/5) | 20-30% RPE reduction |
-| Medium | Verify camera calibration | 15-25% overall improvement |
-| Low | Enable IMU fusion (VIO mode) | 50-70% accuracy improvement |
+| High | Increase `nFeatures` to 2000 nearby | Reduce ATE and Scale Error to improve matching stability |
+| High | Minor adjustments to FAST | Reduce tracking loss probability and improve RPE |
+| Medium | Fine-tuning the combination of nLevels and scaleFactor | Reduce drift caused by pyramid scale mismatch |
+| Medium | Multi-threshold reporting coverage (0.02/0.05/0.1/0.2s) | Improve the reliability of the assessment and avoid being overly optimistic about the 0.2s threshold |
 
 ---
 
