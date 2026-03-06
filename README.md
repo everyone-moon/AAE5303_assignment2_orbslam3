@@ -372,10 +372,10 @@ Scale Error:     8.56%
 
 | Metric | Value | Grade | Interpretation |
 |--------|-------|-------|----------------|
-| **ATE RMSE** | 2.0521 m | F | Very large global error after alignment |
-| **RPE Trans Drift** | 1.1720 m/m | D | Large local drift per traveled distance |
-| **RPE Rot Drift** | 209.428 deg/100m | F | Severe orientation drift |
-| **Completeness** | 100% | B | Many poses can be evaluated, but accuracy is low |
+| **ATE RMSE** | 2.0521 m | C | The global error is moderately high, and the cumulative drift over long trajectories is significant |
+| **RPE Trans Drift** | 1.1720 m/m | C | Local translational drift exists, and short-term tracking stability is generally poor |
+| **RPE Rot Drift** | 209.428 deg/100m | F | Significant rotational drift and poor attitude consistency |
+| **Completeness** | 100% | A | All matches can be evaluated at a correlation threshold of 0.2s |
 
 ---
 
