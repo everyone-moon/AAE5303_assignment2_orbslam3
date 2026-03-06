@@ -401,25 +401,25 @@ This figure is generated from the same inputs used for evaluation (`ground_truth
 
 ### Strengths
 
-1. **High evaluation coverage**: 87% completeness indicates that a large portion of the ground-truth poses can be associated and evaluated.
+1. **High evaluation coverage**: With an association threshold of 0.2s, the matched poses are 601/601, achieving 100% coverage, indicating that most estimated poses can be correlated with the RTK ground truth.
 
-2. **End-to-end pipeline**: The system produces a usable TUM trajectory and can be evaluated reproducibly with standard tooling.
+2. **End-to-end pipeline**: The system successfully generates usable TUM trajectories and completes the standard evaluation process (ATE / RPE / Scale Error), and the experiment is reproducible.
 
 ### Limitations
 
-1. **Tracking Instability**: Frequent "Fail to track local map!" errors observed, leading to multiple map resets (2 maps created).
+1. **Tracking Instability**: RPE Trans RMSE = 1.1720 m, RPE Trans Mean = 0.8611 m, indicating large local inter-frame errors and unstable tracking sections.
 
-2. **Large drift**: Both translation and rotation drift rates are high, indicating unstable local tracking and/or poor geometric constraints.
-
-3. **No loop closure**: Pure VO mode without loop closure or relocalization accumulates drift over long trajectories.
+2. **Global drift is still significant**: ATE RMSE = 2.0521 m, indicating high cumulative error over long trajectories.
+   
+3. **Monocular scale bias exists**: Scale Error = 8.56%, Sim(3) scale correction = 1.0905, reflecting inherent scale uncertainty in monocular VO.
 
 ### Error Sources
 
-1. **Fast UAV Motion**: Aggressive flight maneuvers cause motion blur and large inter-frame displacements.
+1. **Fast UAV Motion**: Large angular velocities/large displacements easily introduce motion blur and matching degradation, increasing RPE.
+   
+2. **Limited feature extraction capacity**: The original parameter nFeatures=1500 may be insufficient in high-resolution scenes; weak textures or fast scenes are more prone to losing stable constraints.
 
-2. **Feature Extraction**: Default ORB parameters (1500 features) may be insufficient for high-resolution images.
-
-3. **Calibration Accuracy**: Camera intrinsics and distortion parameters affect pose estimation quality.
+3. **Insufficient constraints in pure VO mode**:Without IMU fusion/stronger global constraints, long trajectories are more prone to accumulating drift (manifested as high ATE).
 
 ---
 
