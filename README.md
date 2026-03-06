@@ -375,7 +375,7 @@ Scale Error:     8.56%
 | **ATE RMSE** | 2.0521 m | F | Very large global error after alignment |
 | **RPE Trans Drift** | 1.1720 m/m | D | Large local drift per traveled distance |
 | **RPE Rot Drift** | 209.428 deg/100m | F | Severe orientation drift |
-| **Completeness** | % | B | Many poses can be evaluated, but accuracy is low |
+| **Completeness** | 100% | B | Many poses can be evaluated, but accuracy is low |
 
 ---
 
