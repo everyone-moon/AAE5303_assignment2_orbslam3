@@ -363,9 +363,9 @@ Scale Error:     8.56%
 
 | Parameter | Value |
 |-----------|-------|
-| **Sim(3) scale correction** | 6.5944 |
-| **Sim(3) translation** | [-45.426, -95.559, 36.060] m |
-| **Association threshold** | \(t_{max\_diff}\) = 0.1 s |
+| **Sim(3) scale correction** | 1.0905 |
+| **Sim(3) translation** | [-0.281, 0.720, 0.793] m |
+| **Association threshold** | \(t_{max\_diff}\) = 0.2 s |
 | **Association rate (Completeness)** | 100% |
 
 ### Performance Analysis
@@ -427,11 +427,10 @@ This figure is generated from the same inputs used for evaluation (`ground_truth
 
 This assignment demonstrates monocular Visual Odometry implementation using ORB-SLAM3 on UAV aerial imagery. Key findings:
 
-1. ✅ **System Operation**: ORB-SLAM3 successfully processes 3,833 images over 1.9 km trajectory
-2. ✅ **Evaluation coverage**: 87.01% completeness shows that many poses can be evaluated against RTK ground truth
-3. ⚠️ **Tracking stability**: Frequent tracking failures indicate the need for parameter tuning and stronger robustness measures
-4. ❌ **Accuracy**: The current baseline exhibits very large global error and drift rates on this sequence
-
+1. ✅ **System Operation**: ORB-SLAM3 successfully run smoothly and output the trajectory, and the processing flow is stable.
+2. ✅ **Evaluation coverage**: 100% completeness shows that many poses can be evaluated against RTK ground truth
+3. ⚠️ **Tracking stability**: The local relative pose error is still too large, and there is a significant drift segment.
+4. ❌ **Accuracy**: The global error remains high, and while the scale bias is acceptable, there is still room for improvement.
 ### Recommendations for Improvement
 
 | Priority | Action | Expected Improvement |
