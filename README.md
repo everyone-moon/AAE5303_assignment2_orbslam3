@@ -324,25 +324,37 @@ This report assumes you have already generated a TUM-format trajectory file (e.g
 VISUAL ODOMETRY EVALUATION RESULTS
 ================================================================================
 
-Ground Truth: RTK trajectory (1,955 poses)
-Estimated:    ORB-SLAM3 camera trajectory (2,826 poses)
-Matched Poses: 1,701 / 1,955 (87.01%)  ← Completeness
+Ground Truth: /root/ORB_SLAM3/data/rtk_groundtruth.txt
+Estimated:    /root/ORB_SLAM3/KeyFrameTrajectory.txt
+Matched Poses: 601 / 601
 
 METRIC 1: ATE (Absolute Trajectory Error)
-────────────────────────────────────────
-RMSE:   132.1547 m
-Mean:   114.6344 m
-Std:    65.7558 m
+----------------------------------------
+RMSE:   2.052090 m
+Mean:   1.863230 m
+Median: 1.629657 m
+Std:    0.859912 m
+Min:    0.619305 m
+Max:    4.464437 m
 
-METRIC 2: RPE Translation Drift (distance-based, delta=10 m)
-────────────────────────────────────────
-Mean translational RPE over 10 m: 28.7014 m
-Translation drift rate:           2.8701 m/m
+METRIC 2: RPE (Relative Pose Error)
+----------------------------------------
+Trans RMSE:   1.172049 m
+Trans Mean:   0.861074 m
+Trans Median: 0.741684 m
+Trans Std:    0.795141 m
 
-METRIC 3: RPE Rotation Drift (distance-based, delta=10 m)
-────────────────────────────────────────
-Mean rotational RPE over 10 m: 17.3332 deg
-Rotation drift rate:        173.3319 deg/100m
+METRIC 3: Scale Error
+----------------------------------------
+Scale Ratio: 0.914418
+Scale Drift: 8.56%
+
+================================================================================
+SUMMARY (For Academic Reporting)
+================================================================================
+ATE RMSE:        2.0521 m
+RPE Trans RMSE:  1.1720 m
+Scale Error:     8.56%
 
 ================================================================================
 ```
@@ -360,10 +372,10 @@ Rotation drift rate:        173.3319 deg/100m
 
 | Metric | Value | Grade | Interpretation |
 |--------|-------|-------|----------------|
-| **ATE RMSE** | 132.15 m | F | Very large global error after alignment |
-| **RPE Trans Drift** | 2.87 m/m | D | Large local drift per traveled distance |
-| **RPE Rot Drift** | 173.33 deg/100m | F | Severe orientation drift |
-| **Completeness** | 87.01% | B | Many poses can be evaluated, but accuracy is low |
+| **ATE RMSE** | 2.0521 m | F | Very large global error after alignment |
+| **RPE Trans Drift** | 1.1720 m/m | D | Large local drift per traveled distance |
+| **RPE Rot Drift** | 209.428 deg/100m | F | Severe orientation drift |
+| **Completeness** | % | B | Many poses can be evaluated, but accuracy is low |
 
 ---
 
